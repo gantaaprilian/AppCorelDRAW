@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.coreldraw">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo"
+        android:label="Belajar CorelDRAW X7"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".SplashScreen"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+            <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
+        <activity
+            android:name=".Home"
+            android:label="Belajar CorelDRAW X7"
+            android:screenOrientation="portrait"
+            tools:ignore="LockedOrientationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".KIKD"
+            android:label="KI dan KD"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Materi"
+            android:label="Materi"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".MateriSatu"
+            android:label="BAB 1"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriDua"
+            android:label="BAB 2"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriTiga"
+            android:label="BAB 3"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriEmpat"
+            android:label="BAB 4"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriLima"
+            android:label="BAB 5"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriEnam"
+            android:label="BAB 6"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriTujuh"
+            android:label="BAB 7"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriDelapan"
+            android:label="BAB 8"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".MateriSembilan"
+            android:label="BAB 9"
+            android:parentActivityName=".Materi" />
+        <activity
+            android:name=".Video"
+            android:label="Video"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Latihan"
+            android:label="Latihan Soal" />
+        <activity
+            android:name=".HasilLatihanSoal"
+            android:label="Hasil"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Profil"
+            android:label="Profil"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Bantuan"
+            android:label="Bantuan"
+            android:parentActivityName=".Home" />
+        <activity
+            android:name=".Pintasan"
+            android:label="Glosarium"
+            android:parentActivityName=".Home" />
+    </application>
+
+</manifest>
