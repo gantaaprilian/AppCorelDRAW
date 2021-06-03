@@ -3,6 +3,8 @@ package com.example.coreldraw;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -10,6 +12,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
 
@@ -20,6 +26,7 @@ public class Latihan extends AppCompatActivity {
     RadioButton PilihanA, PilihanB, PilihanC, PilihanD;
     int nomor = 0;
     public static int hasil, benar, salah;
+    public ArrayList<Integer> nomor_soal;
 
     //Pertanyaan Soal
     String[] pertanyaan_soal = new String[]{
@@ -47,6 +54,51 @@ public class Latihan extends AppCompatActivity {
             "Untuk membuat efek transparan pada objek","Untuk membuat efek 3D pada objek","Untuk membuat efek bayangan pada objek","Untuk membuat efek distorsi pada objek",
             "CTRL+D","CTRL+E","CTRL+N","CTRL+Z",
             "Menduplikat gambar","Memotong gambar","Menyatukan gambar","Memisahkan gambar"
+    };
+    String[] pilihan_jawaban_a = new String[]{
+            "Aplikasi Editor Grafik Vektor",
+            "Membuat lingkaran atau elips",
+            "Membuat persegi atau persegi panjang",
+            "Pen Tool",
+            "Knife Tool",
+            "Alat yang digunakan untuk menggambar garis lurus atau garis bebas",
+            "File",
+            "Untuk membuat efek transparan pada objek",
+            "CTRL+D",
+            "Menduplikat gambar"
+    };    String[] pilihan_jawaban_b = new String[]{
+            "Aplikasi Membuat Program",
+            "Membuat garis lurus",
+            "Membuat lingkaran atau elips",
+            "Crop Tool",
+            "Pick Tool",
+            "Alat yang digunakan untuk membentuk berbagai objek garis artistik",
+            "View",
+            "Untuk membuat efek 3D pada objek",
+            "CTRL+E",
+            "Memotong gambar"
+    };    String[] pilihan_jawaban_c = new String[]{
+            "Aplikasi Membuat Animasi Flash",
+            "Membuat persegi atau persegi panjang",
+            "Membuat garis lurus",
+            "Bezier Tool",
+            "Envelope Tool",
+            "Alat yang digunakan untuk membentuk beragam garis lurus dan garis yang tidak beraturan secara bersamaan",
+            "Effect",
+            "Untuk membuat efek bayangan pada objek",
+            "CTRL+N",
+            "Menyatukan gambar"
+    };    String[] pilihan_jawaban_d = new String[]{
+            "Aplikasi Berhitung",
+            "Membuat segitiga",
+            "Membuat gambar 3D",
+            "Artistic Media Tool",
+            "Shape Tool",
+            "Alat yang digunakan untuk membuat garis-garis tabel yang menyerupai kertas grafik",
+            "Mailing",
+            "Untuk membuat efek distorsi pada objek",
+            "CTRL+Z",
+            "Memisahkan gambar"
     };
 
     //Jawaban yang benar
@@ -77,12 +129,13 @@ public class Latihan extends AppCompatActivity {
         PilihanB = (RadioButton)findViewById(R.id.pilihanB);
         PilihanC = (RadioButton)findViewById(R.id.pilihanC);
         PilihanD = (RadioButton)findViewById(R.id.pilihanD);
+        nomor_soal = randomSoal();
 
-        pertanyaan.setText(pertanyaan_soal[nomor]);
-        PilihanA.setText(pilihan_jawaban[0]);
-        PilihanB.setText(pilihan_jawaban[1]);
-        PilihanC.setText(pilihan_jawaban[2]);
-        PilihanD.setText(pilihan_jawaban[3]);
+        pertanyaan.setText(nomor_soal.get(nomor) +" | " + pertanyaan_soal[nomor_soal.get(nomor)]);
+        PilihanA.setText(pilihan_jawaban_a[nomor_soal.get(nomor)]);
+        PilihanB.setText(pilihan_jawaban_b[nomor_soal.get(nomor)]);
+        PilihanC.setText(pilihan_jawaban_c[nomor_soal.get(nomor)]);
+        PilihanD.setText(pilihan_jawaban_d[nomor_soal.get(nomor)]);
 
         rg.check(0);
         benar = 0;
@@ -95,25 +148,43 @@ public class Latihan extends AppCompatActivity {
             RadioButton jawaban_user = (RadioButton) findViewById(rg.getCheckedRadioButtonId());
             String ambil_jawaban_user = jawaban_user.getText().toString();
             rg.check(0);
-            if (ambil_jawaban_user.equalsIgnoreCase(jawaban_benar[nomor])) benar++;
+            if (ambil_jawaban_user.equalsIgnoreCase(jawaban_benar[nomor_soal.get(nomor)])) benar++;
             else salah++;
             nomor++;
 
             if (nomor < pertanyaan_soal.length) {
-                pertanyaan.setText(pertanyaan_soal[nomor]);
-                PilihanA.setText(pilihan_jawaban[(nomor * 4) + 0]);
-                PilihanB.setText(pilihan_jawaban[(nomor * 4) + 1]);
-                PilihanC.setText(pilihan_jawaban[(nomor * 4) + 2]);
-                PilihanD.setText(pilihan_jawaban[(nomor * 4) + 3]);
+                pertanyaan.setText(nomor_soal.get(nomor) +" | " + pertanyaan_soal[nomor_soal.get(nomor)]);
+                PilihanA.setText(pilihan_jawaban_a[nomor_soal.get(nomor)]);
+                PilihanB.setText(pilihan_jawaban_b[nomor_soal.get(nomor)]);
+                PilihanC.setText(pilihan_jawaban_c[nomor_soal.get(nomor)]);
+                PilihanD.setText(pilihan_jawaban_d[nomor_soal.get(nomor)]);
             } else {
-                hasil = benar * 10;
-                Intent selesai = new Intent(getApplicationContext(), HasilLatihanSoal.class);
-                startActivity(selesai);
+                goToHasil(benar,salah);
             }
         }
         else {
             Toast.makeText(this, "Pilih Jawaban Dulu!",Toast.LENGTH_SHORT).show();
         }
+    }
+
+    ArrayList<Integer> randomSoal(){
+        ArrayList<Integer> nosoal = new ArrayList<Integer>();
+        for (int i = 0; i< pertanyaan_soal.length;i++){
+                nosoal.add(i);
+            }
+        Collections.shuffle(nosoal);
+        Log.d("list data",nosoal.toString());
+        Log.d("list size",nosoal.size()+"");
+        return nosoal;
+    }
+
+    public void goToHasil(int jumbenar,int jumsalah){
+        int finalHasil = jumbenar * 10;
+        Intent selesai = new Intent(getApplicationContext(), HasilLatihanSoal.class);
+        selesai.putExtra(HasilLatihanSoal.FINAL_NILAI,finalHasil);
+        selesai.putExtra(HasilLatihanSoal.FINAL_BENAR,jumbenar);
+        selesai.putExtra(HasilLatihanSoal.FINAL_SALAH,jumsalah);
+        startActivity(selesai);
     }
 
     public void onBackPressed() {

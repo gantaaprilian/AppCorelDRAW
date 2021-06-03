@@ -9,6 +9,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class HasilLatihanSoal extends AppCompatActivity {
     private long back;
+    public static final String FINAL_NILAI = "nilai_final";
+    public static final String FINAL_BENAR = "nilai_benar";
+    public static final String FINAL_SALAH = "nilai_salah";
+    int nilaifinal,jumlahbenar,jumlahsalah;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +21,14 @@ public class HasilLatihanSoal extends AppCompatActivity {
 
         TextView hasil = (TextView)findViewById(R.id.hasil);
         TextView nilai = (TextView)findViewById(R.id.nilai);
-        hasil.setText("Jawababan Benar : "+Latihan.benar+"\nJawaban Salah : "+Latihan.salah);
-        nilai.setText(""+Latihan.hasil);
+        Bundle bundle = getIntent().getExtras();
+        if (bundle != null) {
+            nilaifinal = bundle.getInt(FINAL_NILAI);
+            jumlahbenar = bundle.getInt(FINAL_BENAR);
+            jumlahsalah = bundle.getInt(FINAL_SALAH);
+        }
+        hasil.setText("Jawababan Benar : "+jumlahbenar+"\nJawaban Salah : "+jumlahsalah);
+        nilai.setText(""+nilaifinal);
     }
 
     public void ulangi (View view){

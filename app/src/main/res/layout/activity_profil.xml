@@ -8,8 +8,9 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="224dp"
-        android:orientation="vertical">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="12dp">
 
         <ImageView
             android:layout_width="150sp"
@@ -56,17 +57,18 @@
                 app:cardCornerRadius="12dp"
                 android:clickable="true">
 
-                <GridLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_gravity="center"
+                    android:orientation="horizontal"
+                    android:gravity="center_horizontal"
                     android:alignmentMode="alignMargins"
-                    android:columnCount="3"
-                    android:columnOrderPreserved="false"
-                    android:foregroundGravity="center_vertical"
-                    android:padding="12dp"
-                    android:rowCount="3">
-
+                    android:padding="12dp">
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center_horizontal">
                     <ImageView
                         android:id="@+id/imagefacebook"
                         android:layout_width="50dp"
@@ -76,7 +78,12 @@
                         android:layout_marginRight="30dp"
                         app:srcCompat="@drawable/facebook"
                         android:foreground="?android:attr/selectableItemBackground"/>
-
+                    </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
                     <ImageView
                         android:id="@+id/imagewhatsapp"
                         android:layout_width="50dp"
@@ -86,7 +93,12 @@
                         android:layout_marginRight="30dp"
                         app:srcCompat="@drawable/whatsapp"
                         android:foreground="?android:attr/selectableItemBackground"/>
-
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_horizontal">
                     <ImageView
                         android:id="@+id/imageinstagram"
                         android:layout_width="50dp"
@@ -96,8 +108,9 @@
                         android:layout_marginEnd="30dp"
                         app:srcCompat="@drawable/instagram"
                         android:foreground="?android:attr/selectableItemBackground"/>
+                </LinearLayout>
 
-                </GridLayout>
+                </LinearLayout>
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
