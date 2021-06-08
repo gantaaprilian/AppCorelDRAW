@@ -28,7 +28,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri1"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -40,6 +40,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab1" />
 
             </androidx.cardview.widget.CardView>
@@ -47,7 +48,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri2"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -59,6 +60,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:scaleType="fitXY"
                         android:src="@drawable/bab2" />
 
             </androidx.cardview.widget.CardView>
@@ -66,7 +68,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri3"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -78,6 +80,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab3" />
 
             </androidx.cardview.widget.CardView>
@@ -85,7 +88,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri4"
                 android:layout_width="match_parent"
-                android:layout_height="218dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -97,6 +100,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab4" />
 
             </androidx.cardview.widget.CardView>
@@ -104,7 +108,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri5"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -116,6 +120,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab5" />
 
             </androidx.cardview.widget.CardView>
@@ -123,7 +128,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri6"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -135,6 +140,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab6" />
 
             </androidx.cardview.widget.CardView>
@@ -142,7 +148,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri7"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -154,6 +160,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab7" />
 
             </androidx.cardview.widget.CardView>
@@ -161,7 +168,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri8"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -173,6 +180,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab8" />
 
             </androidx.cardview.widget.CardView>
@@ -180,7 +188,7 @@
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardMateri9"
                 android:layout_width="match_parent"
-                android:layout_height="217dp"
+                android:layout_height="195dp"
                 android:layout_marginLeft="12dp"
                 android:layout_marginTop="12dp"
                 android:layout_marginRight="12dp"
@@ -193,6 +201,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:scaleType="fitXY"
                     android:src="@drawable/bab9" />
 
             </androidx.cardview.widget.CardView>

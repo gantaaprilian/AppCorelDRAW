@@ -3,7 +3,6 @@ package com.example.coreldraw;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
@@ -14,7 +13,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 
 import static android.content.pm.ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
@@ -24,22 +22,22 @@ public class Latihan extends AppCompatActivity {
     TextView pertanyaan;
     RadioGroup rg;
     RadioButton PilihanA, PilihanB, PilihanC, PilihanD;
-    int nomor = 0;
+    int nomor = 0, nomorsoal=1 ;
     public static int hasil, benar, salah;
     public ArrayList<Integer> nomor_soal;
 
     //Pertanyaan Soal
     String[] pertanyaan_soal = new String[]{
-            "1. CorelDRAW adalah...",
-            "2. Rectangle Tool berfungsi untuk...",
-            "3. Elipse Tool berfungsi untuk...",
-            "4. Alat yang digunakan untuk membentuk berbagai objek garis artistik adalah…..",
-            "5. Alat yang digunakan untuk menarik, memindahkan objek adalah...",
-            "6. Freehand tool berfungsi untuk....",
-            "7. Berikul ini adalah menu yang terdapat di aplikasi corel draw, kecuali...",
-            "8. Drop Shadow Tool digunakan untuk…..",
-            "9. Tombol pada keyboard untuk mengexport gambar...",
-            "10. Ctrl+D adalah shortcut pada keyboard yang berfungsi untuk..."
+            "CorelDRAW adalah...",
+            "Rectangle Tool berfungsi untuk...",
+            "Elipse Tool berfungsi untuk...",
+            "Alat yang digunakan untuk membentuk berbagai objek garis artistik adalah…..",
+            "Alat yang digunakan untuk menarik, memindahkan objek adalah...",
+            "Freehand tool berfungsi untuk....",
+            "Berikul ini adalah menu yang terdapat di aplikasi corel draw, kecuali...",
+            "Drop Shadow Tool digunakan untuk…..",
+            "Tombol pada keyboard untuk mengexport gambar...",
+            "Ctrl+D adalah shortcut pada keyboard yang berfungsi untuk..."
     };
 
     //Pilihan Jawaban a, b, c, d
@@ -131,7 +129,8 @@ public class Latihan extends AppCompatActivity {
         PilihanD = (RadioButton)findViewById(R.id.pilihanD);
         nomor_soal = randomSoal();
 
-        pertanyaan.setText(nomor_soal.get(nomor) +" | " + pertanyaan_soal[nomor_soal.get(nomor)]);
+
+        pertanyaan.setText(nomorsoal+". " + pertanyaan_soal[nomor_soal.get(nomor)]);
         PilihanA.setText(pilihan_jawaban_a[nomor_soal.get(nomor)]);
         PilihanB.setText(pilihan_jawaban_b[nomor_soal.get(nomor)]);
         PilihanC.setText(pilihan_jawaban_c[nomor_soal.get(nomor)]);
@@ -151,9 +150,10 @@ public class Latihan extends AppCompatActivity {
             if (ambil_jawaban_user.equalsIgnoreCase(jawaban_benar[nomor_soal.get(nomor)])) benar++;
             else salah++;
             nomor++;
+            nomorsoal++;
 
             if (nomor < pertanyaan_soal.length) {
-                pertanyaan.setText(nomor_soal.get(nomor) +" | " + pertanyaan_soal[nomor_soal.get(nomor)]);
+                pertanyaan.setText(nomorsoal+". "+pertanyaan_soal[nomor_soal.get(nomor)]);
                 PilihanA.setText(pilihan_jawaban_a[nomor_soal.get(nomor)]);
                 PilihanB.setText(pilihan_jawaban_b[nomor_soal.get(nomor)]);
                 PilihanC.setText(pilihan_jawaban_c[nomor_soal.get(nomor)]);
@@ -187,12 +187,12 @@ public class Latihan extends AppCompatActivity {
         startActivity(selesai);
     }
 
-    public void onBackPressed() {
-        if (back + 1000 > System.currentTimeMillis()) {
-            super.onBackPressed();
-            return;
-        } else {
-            Toast.makeText(getBaseContext(), "Selesaikan Soal Terlebih Dahulu!", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    public void onBackPressed() {
+//        if (back + 1000 > System.currentTimeMillis()) {
+//            super.onBackPressed();
+//            return;
+//        } else {
+//            Toast.makeText(getBaseContext(), "Selesaikan Soal Terlebih Dahulu!", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 }

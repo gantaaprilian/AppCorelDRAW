@@ -31,7 +31,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:gravity="center_horizontal"
-        android:text="Universitas Negeri Yogyakarta \n© 2020"
+        android:text="Universitas Negeri Yogyakarta \n© 2021"
         android:textSize="15dp"
         android:textStyle="bold" />
 

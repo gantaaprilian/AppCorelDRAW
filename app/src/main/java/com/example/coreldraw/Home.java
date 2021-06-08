@@ -49,7 +49,7 @@ public class Home extends AppCompatActivity {
         latihan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(Home.this, Latihan.class));
+                startActivity(new Intent(Home.this, Soal.class));
             }
         });
 

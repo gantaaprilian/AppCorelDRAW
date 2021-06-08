@@ -33,7 +33,7 @@ public class HasilLatihanSoal extends AppCompatActivity {
 
     public void ulangi (View view){
         finish();
-        Intent i = new Intent(getApplicationContext(),Latihan.class);
+        Intent i = new Intent(getApplicationContext(),Soal.class);
         startActivity(i);
     }
 

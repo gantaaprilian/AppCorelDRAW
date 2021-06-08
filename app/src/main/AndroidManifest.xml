@@ -10,13 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
+        <activity
+            android:name=".SplashScreen"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Home"
@@ -78,8 +79,17 @@
             android:label="Video"
             android:parentActivityName=".Home" />
         <activity
+            android:name=".Soal"
+            android:label="Pilih Soal"
+            android:parentActivityName=".Home" />
+        <activity
             android:name=".Latihan"
-            android:label="Latihan Soal" />
+            android:label="Latihan Soal"
+            android:parentActivityName=".Soal" />
+        <activity
+            android:name=".TebakGambar"
+            android:label="Latihan Soal Tebak Gambar"
+            android:parentActivityName=".Soal"/>
         <activity
             android:name=".HasilLatihanSoal"
             android:label="Hasil"

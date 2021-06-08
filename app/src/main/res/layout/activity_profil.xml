@@ -8,21 +8,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_margin="12dp">
+        android:layout_height="210dp"
+        android:layout_margin="12dp"
+        android:background="@drawable/bgfotoku"
+        android:orientation="vertical">
 
         <ImageView
-            android:layout_width="150sp"
-            android:layout_height="150sp"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
             android:layout_gravity="center"
-            android:layout_marginTop="12dp"
-            app:srcCompat="@drawable/bgstudent" />
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            app:srcCompat="@drawable/fotoku" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
             android:text="Ganta Tri Aprilian"
             android:textAlignment="center"
             android:textSize="18dp"
@@ -31,7 +32,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="6dp"
             android:text="15520241010"
             android:textAlignment="center"
             android:textSize="15dp" />
